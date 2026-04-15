@@ -12,4 +12,10 @@
         <toolWindow factoryClass="com.github.skonst07.aicodereviewer.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
         <postStartupActivity implementation="com.github.skonst07.aicodereviewer.startup.MyProjectActivity" />
     </extensions>
+
+    <actions>
+        <action id="com.github.skonst07.aicodereviewer.actions.ReviewAction" class="com.github.skonst07.aicodereviewer.actions.ReviewAction" text="AI Review" description="Send selected code to Claude AI for a review">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>

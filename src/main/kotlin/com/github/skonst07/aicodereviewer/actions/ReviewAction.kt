@@ -26,7 +26,7 @@ class ReviewAction : AnAction() {
         Notification(
             "com.github.skonst07.aicodereviewer.actions",
             "AI Code Reviewer",
-            "Code review available",
+            "Selected: $selectedText",
             NotificationType.INFORMATION
         ).let { Notifications.Bus.notify(it, project) }
 

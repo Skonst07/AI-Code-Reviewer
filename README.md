@@ -81,12 +81,12 @@ src/main/kotlin/com/aicodereviewer/
 
 ## Configuration options
 
-| Setting | Default | Description                          |
-|---|---|--------------------------------------|
-| Model | `llama-3.3-70b-versatile` | Any AI model slug                    |
-| Max tokens | 2048 | Upper bound on response length       |
+| Setting | Default | Description                   |
+|---|---|-------------------------------|
+| Model | `llama-3.3-70b-versatile` | AI model slug                 |
+| Max tokens | 2048 | Upper bound on response length |
 | Focus areas | `bugs,security,performance,style` | Comma-separated hints for the prompt |
-| Streaming | ✅ enabled | Toggle SSE vs. single-response mode  |
+| Streaming | ✅ enabled | Toggle SSE vs. single-response mode |
 
 ---
 -

@@ -9,10 +9,9 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.skonst07.aicodereviewer.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.skonst07.aicodereviewer.startup.MyProjectActivity" />
         <applicationService serviceImplementation="com.github.skonst07.aicodereviewer.settings.PluginSettings"/>
         <applicationConfigurable parentId="tools" instance="com.github.skonst07.aicodereviewer.settings.PluginConfigurable" id="com.github.skonst07.aicodereviewer.settings.PluginConfigurable" displayName="AI Code Reviewer"/>
+        <toolWindow id="AI Review" anchor="bottom" factoryClass="com.github.skonst07.aicodereviewer.UI.AIreviewerToolWindow"/>
     </extensions>
 
     <actions>

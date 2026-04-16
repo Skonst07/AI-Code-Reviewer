@@ -10,7 +10,7 @@ import com.intellij.credentialStore.generateServiceName
 import com.intellij.openapi.application.ApplicationManager
 
 data class  SettingsState(
-    var model: String = "gemini-3.1-pro",
+    var model: String = "llama-3.3-70b-versatile",
     var MAX_TOKENS: Int = 2048,
 )
 

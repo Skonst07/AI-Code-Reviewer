@@ -1,4 +1,124 @@
-# AI-Code-Reviewer
+# AI Code Reviewer — IntelliJ Plugin
+
+An IntelliJ IDEA plugin that sends your selected code to **Groq** for an instant AI-powered review, streamed live into a dedicated tool window.
+
+---
+
+## Features
+
+- **Right-click → Review with AI** on any selection
+- Live **streaming** output — results appear token-by-token, no waiting
+- Structured review: summary · issues with severity · positives · score
+- Configurable **focus areas** (bugs, security, performance, style…)
+- **API key stored in PasswordSafe** — never written to disk in plain text
+- Cancellable background task — won't freeze the IDE
+
+---
+
+## Quick start
+
+### 1. Prerequisites
+
+| Requirement   | Version |
+|---------------|---|
+| JDK           | 21+ |
+| IntelliJ IDEA | 2024.3+ (Community or Ultimate) |
+| Groq API key  | [console.groq.com](https://console.groq.com/) |
+
+### 2. Build the plugin
+
+```bash
+git clone https://github.com/your-handle/ai-code-reviewer.git
+cd AI-Code-Reviewer
+./gradlew buildPlugin        # produces build/distributions/AI-Code-Reviewer-*.zip
+```
+
+### 3. Install in IntelliJ
+
+1. Open **Settings → Plugins → ⚙ → Install Plugin from Disk…**
+2. Select the `.zip` from `build/distributions/`
+3. Restart the IDE
+
+### 4. Configure
+
+Go to **Preferences → Tools → AI Code Reviewer** and paste your Groq API key.
+
+### 5. Use
+
+1. Select any code in the editor
+2. Right-click → **Review with AI**
+3. Watch the **AI Review** panel at the bottom stream the review
+
+---
+
+## Run from source (sandbox IDE)
+
+```bash
+./gradlew runIde
+```
+
+This launches a fresh IntelliJ sandbox with the plugin pre-installed.
+
+---
+
+## Project structure
+
+```
+src/main/kotlin/com/aicodereviewer/
+├── actions/
+│   └── ReviewAction.kt          # AnAction: validates, launches background task
+├── api/
+│   └── GroqApiClient.kt         # HTTP + SSE streaming client
+├── settings/
+│   ├── PluginSettings.kt        # PersistentStateComponent + PasswordSafe
+│   └── PluginConfigurable.kt    # Preferences UI panel
+└── ui/
+    ├── AIreviewerPanel.kt           # Swing panel
+    └── AIreviewerToolWindow.kt
+```
+
+---
+
+## Configuration options
+
+| Setting | Default | Description                          |
+|---|---|--------------------------------------|
+| Model | `llama-3.3-70b-versatile` | Any AI model slug                    |
+| Max tokens | 2048 | Upper bound on response length       |
+| Focus areas | `bugs,security,performance,style` | Comma-separated hints for the prompt |
+| Streaming | ✅ enabled | Toggle SSE vs. single-response mode  |
+
+---
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
 ![Build](https://github.com/Skonst07/AI-Code-Reviewer/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)

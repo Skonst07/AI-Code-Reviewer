@@ -9,7 +9,7 @@ import okhttp3.MediaType.Companion.toMediaType
 
 
 
-class GeminiApiClient {
+class GroqApiClient {
     private val gson = Gson()
     private val client = OkHttpClient()
 

@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.github.skonst07.aicodereviewer.settings.PluginSettings
-import com.github.skonst07.aicodereviewer.api.GeminiApiClient
+import com.github.skonst07.aicodereviewer.api.GroqApiClient
 import com.intellij.openapi.wm.ToolWindowManager
 
 class ReviewAction : AnAction() {
@@ -41,7 +41,7 @@ class ReviewAction : AnAction() {
         }
 
         val prompt = "Review this code and identify bugs, issues, and improvements:\n\n$selectedText"
-        val apiClient = GeminiApiClient()
+        val apiClient = GroqApiClient()
 
         apiClient.review(
             apiKey = apiKey,

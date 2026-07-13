@@ -28,7 +28,7 @@ An IntelliJ IDEA plugin that sends your selected code to **Groq** for an instant
 ### 2. Build the plugin
 
 ```bash
-git clone https://github.com/your-handle/ai-code-reviewer.git
+git clone https://github.com/Skonst07/AI-Code-Reviewer.git
 cd AI-Code-Reviewer
 ./gradlew buildPlugin        # produces build/distributions/AI-Code-Reviewer-*.zip
 ```
